@@ -11,11 +11,11 @@
   <script defer="defer" src="./static/js/main.cb41f6a5.js"></script>
   <link href="./static/css/main.4017e162.css" rel="stylesheet">
   <meta name="description"
-        content="OmniHuman-1: Rethinking the Scaling-Up of One-Stage Conditioned Human Animation Models">
-  <title>OmniHuman-1 Project</title>
+        content="UniTalking: A Unified Audio-Video Framework for Talking Portrait Generation">
+  <title>UniTalking Project</title>
 </head>
 
-<body>
+<!-- <body>
   <nav class="navbar" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
         <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
@@ -56,22 +56,24 @@
         </div>
 
     </div>
-  </nav>
+  </nav> -->
 
   <div id="root" class="column-flex">
     <div id="title-flex" class="column-flex">
-      <h1> OmniHuman-1: Rethinking the Scaling-Up of One-Stage Conditioned Human Animation Models </h1>
+      <h1> UniTalking: A Unified Audio-Video Framework for Talking Portrait Generation </h1>
       <span>
-        <a target="_blank" href="" onclick="return false;">Gaojie&nbsp;Lin</a><sup>*</sup>,
-        <a href="https://jianwenjiang.github.io">Jianwen&nbsp;Jiang</a><sup>*†</sup>,
-        <a target="_blank" href="" onclick="return false;">Jiaqi&nbsp;Yang</a><sup>*</sup>,
-        <a href="https://zhengzerong.github.io/">Zerong&nbsp;Zheng</a><sup>*</sup>,
-        <a target="_blank" href="" onclick="return false;">Chao&nbsp;Liang</a><sup></sup>
+        Hebeizi&nbsp;Li<sup></sup>,
+        Benyuan&nbsp;Sun<sup>†</sup>,
+        Yi&nbsp;Yang<sup></sup>,
+        Zihao&nbsp;Liang<sup></sup>,
+        Zihao&nbsp;Yin<sup></sup>,
+        Xiao&nbsp;Sha<sup></sup>,
+        Chenliang&nbsp;Wang<sup></sup>
         
         <br />
       </span>
-      <span>ByteDance Intelligent Creation</span>
-      <span><sup>*</sup>Equal contribution,<sup>†</sup>Project lead
+      <span>Central Media Technology Institute, Huawei</span>
+      <span><sup>†</sup>Project lead
         <!-- ,<sup>‡</sup>Internship at Bytedance -->
       </span>
       <div class="flex flex-gap" style="margin-bottom:0.5em;">
@@ -79,23 +81,21 @@
 <!-- 	      <a target="_blank" href="" onclick="alert('Coming Soon!');return false;"><button>Paper</button></a> -->
         <a target="_blank" href="https://omnihuman-lab.github.io"><button>Page</button></a>
       </div>
-      <small><span><b>TL;DR</b>: We propose an end-to-end multimodality-conditioned human video generation framework named OmniHuman, which can generate human videos based on a single human image and motion signals (e.g., audio only, video only, or a combination of audio and video). In OmniHuman, we introduce a multimodality motion conditioning mixed training strategy, allowing the model to benefit from data scaling up of mixed conditioning. This overcomes the issue that previous end-to-end approaches faced due to the scarcity of high-quality data. OmniHuman significantly outperforms existing methods, generating extremely realistic human videos based on weak signal inputs, especially audio. It supports image inputs of any aspect ratio, whether they are portraits, half-body, or full-body images, delivering more lifelike and high-quality results across various scenarios.</span></small>
-      <small><span><b>Currently, we do not offer services/downloads anywhere, nor do we have any SNS accounts for the project.</b></span></small>
-      <small><span><b>Please be cautious of fraudulent information. We will provide timely updates on future developments.</b></span></small>
+      <small><span><b>Abstract</b>: While state-of-the-art audio-video generation models like Veo3 and Sora2 demonstrate remarkable capabilities, their closed-source nature makes their architectures and training paradigms inaccessible. To bridge this gap in accessibility and performance, we introduce UniTalking, a unified, end-to-end diffusion framework for generating high-fidelity speech and lip-synchronized video. At its core, our framework employs Multi-Modal Transformer Blocks to explicitly model the fine-grained temporal correspondence between audio and video latent tokens via a shared self-attention mechanism. By leveraging powerful priors from a pre-trained video generation model, our framework ensures state-of-the-art visual fidelity while enabling efficient training. Furthermore, UniTalking incorporates a personalized voice cloning capability, allowing the generation of speech in a target style from a brief audio reference. Qualitative and quantitative results demonstrate that our method produces highly realistic talking portraits, achieving superior performance over existing open-source approaches in lip-sync accuracy, audio naturalness, and overall perceptual quality.</span></small>
       <div class='responsive-image-container'>
-        <img src='image/overall.png' alt='' />
+        <img src='image/fig-main.png' alt='' />
       </div>
     </div>
 
     <div id="sections" class="column-flex">
-      <h3>Generated Videos</h3>
-        <p>
+      <h3>Text&Image to Audio&Video</h3>
+        <!-- <p>
           OmniHuman supports various visual and audio styles. It can generate realistic human videos <strong>at any aspect ratio and body proportion (portrait, half-body, full-body all in one)</strong>, with realism stemming from comprehensive aspects including motion, lighting, and texture details.<br/>
           
         </p>
         <p class="styled-text">
           <b>*</b> Note that to generate all results on this page, <strong>only any single image and audio are required</strong>, except for the demo showcasing video and combined driving signals. For the sake of a clean layout, we have omitted the display of reference images, which are the first frame of the generated video in most cases. If you need comparisons or further information, please do not hesitate to contact us.
-        </p>
+        </p> -->
         <div class="video-slider">
           <video src="video/main1.mp4"></video>
           <video src="video/main2.mp4"></video>
@@ -117,64 +117,71 @@
  -->
 
 
-      <h3>Diversity</h3>
-        <p>In terms of input diversity, OmniHuman supports cartoons, artificial objects, animals, and challenging poses, ensuring motion characteristics match each style's unique features.</p>
-        <div class="video-slider">
-          <video src="video/div1.mp4"></video>
-          <video src="video/div2.mp4"></video>
-          <video src="video/div3.mp4"></video>
+      <h3>Text&Reference to Audio&Video</h3>
+        <p><b>One-Ref</b></p>
+        <div class="audio-single" style="margin-bottom: 1.5rem;">   <!-- 添加了简单下边距与第二行视频隔开，无背景、行距等额外样式 -->
+          <audio controls src="audio/ref.mp3">
+            您的浏览器不支持 audio 元素。
+          </audio>
         </div>
         <div class="video-slider">
-          <video src="video/div4.mp4"></video>
-          <video src="video/div5.mp4"></video>
-          <video src="video/div6.mp4"></video>
-          <video src="video/div7.mp4"></video>
+          <video src="video/one_ref_1.mp4"></video>
+          <video src="video/one_ref_2.mp4"></video>
+          <video src="video/one_ref_3.mp4"></video>
         </div>
 
+        <p><b>Multi-Ref</b></p>
+        <div style="display: flex; flex-direction: column; gap: 1.5rem; margin: 1rem 0;">
+          
+          <!-- 第1组：音频1 + 视频1 -->
+          <div style="display: flex; gap: 2rem; align-items: center;">
+            <div style="flex: 1;">
+              <audio controls src="audio/ref_1.wav" style="width: 100%;">
+                您的浏览器不支持 audio 元素。
+              </audio>
+            </div>
+            <div style="flex: 1;">
+              <video controls src="video/multi_ref_1.mp4" style="width: 100%;">
+                您的浏览器不支持 video 元素。
+              </video>
+            </div>
+          </div>
 
+          <!-- 第2组：音频2 + 视频2 -->
+          <div style="display: flex; gap: 2rem; align-items: center;">
+            <div style="flex: 1;">
+              <audio controls src="audio/ref_2.wav" style="width: 100%;">
+                您的浏览器不支持 audio 元素。
+              </audio>
+            </div>
+            <div style="flex: 1;">
+              <video controls src="video/multi_ref_2.mp4" style="width: 100%;">
+                您的浏览器不支持 video 元素。
+              </video>
+            </div>
+          </div>
 
+          <!-- 第3组：音频3 + 视频3 -->
+          <div style="display: flex; gap: 2rem; align-items: center;">
+            <div style="flex: 1;">
+              <audio controls src="audio/ref_3.wav" style="width: 100%;">
+                您的浏览器不支持 audio 元素。
+              </audio>
+            </div>
+            <div style="flex: 1;">
+              <video controls src="video/multi_ref_3.mp4" style="width: 100%;">
+                您的浏览器不支持 video 元素。
+              </video>
+            </div>
+          </div>
 
-      <h3>More Portrait Cases</h3>
-        <p>Here, we also include a section dedicated to portrait aspect ratio results, which are derived from test samples in the <a href="https://celebv-hq.github.io/">CelebV-HQ</a>datasets.</p>
-        <div class="video-slider">
-          <video src="video/head1.mp4"></video>
-          <video src="video/head2.mp4"></video>
-          <video src="video/head3.mp4"></video>
-        </div>
-        <div class="video-slider">
-          <video src="video/head4.mp4"></video>
-          <video src="video/head5.mp4"></video>
-          <video src="video/head6.mp4"></video>
         </div>
 
       
-      <h3>Singing</h3>
-        <p>OmniHuman can support various music styles and accommodate multiple body poses and singing forms. It can handle high-pitched songs and display different motion styles for different types of music. Please remember to select the highest video quality. The generated video quality also highly depends on the quality of the reference image.
-
-        <div class="iframe-container">
-          <iframe src="https://www.youtube.com/embed/XF5vOR7Bpzs?si=8xdu-gtd9AzUd615" allowfullscreen></iframe>
-          <iframe src="https://www.youtube.com/embed/0cwvT-J7PcQ?si=tfnipoBtxDU0gcNH" allowfullscreen></iframe>
-          <iframe src="https://www.youtube.com/embed/4w2AeGHy31Q?si=DQaeCWRj0V9SRm52" allowfullscreen></iframe>
-          <iframe src="https://www.youtube.com/embed/1NU8NzvAxEg?si=tu3zNPGjUtdL1ag9" allowfullscreen></iframe>
-        </div>
-
-
-        <div class="iframe-container">
-          <iframe src="https://www.youtube.com/embed/ns8kn5NGL44?si=5-uMWr431xZamSlY" allowfullscreen></iframe>
-          <iframe src="https://www.youtube.com/embed/GGTcVOb2S9k?si=tLMOPd_1rOXXeO5x" allowfullscreen></iframe>
-          <iframe src="https://www.youtube.com/embed/CVVNK06LVac?si=VVJTt1nHcKq_xq7n" allowfullscreen></iframe>
-          <iframe src="https://www.youtube.com/embed/XV4E0-TVsvg?si=Q_936m0uHLW86cQk" allowfullscreen></iframe>
-        </div>
-
-
-      <h3>Compatibility with Video Driving</h3>
-        <p>Due to OmniHuman's mixed condition training characteristics, it can support not only audio driving but also video driving to mimic specific video actions, as well as combined audio and video driving to control specific body parts like recent methods.
-
-
 
       <h3>Ethics Concerns</h3>
         <p>
-          The images and audios used in these demos are from public sources or generated by models, and are solely used to demonstrate the capabilities of this research work. If there are any concerns, please contact us (jianwen.alan@gmail.com) and we will delete it in time. The template of this webpage is based on the one from <a href="https://www.microsoft.com/en-us/research/project/vasa-1/">VASA-1</a>,  and some test audios are from <a href="https://www.microsoft.com/en-us/research/project/vasa-1">VASA-1</a>,<a href="https://loopyavatar.github.io">Loopy</a>,<a href="https://cyberhost.github.io/">CyberHost</a>.
+          The images and audios used in these demos are from public sources or generated by models, and are solely used to demonstrate the capabilities of this research work. If there are any concerns, please contact us (jianwen.alan@gmail.com) and we will delete it in time. The template of this webpage is based on the one from <a href="https://omnihuman-lab.github.io/">OmniHuman-1</a>.
         </p>
       
       <h3>BibTeX</h3>
@@ -185,20 +192,6 @@
             author={Gaojie Lin and Jianwen Jiang and Jiaqi Yang and Zerong Zheng and Chao Liang},
             journal={arXiv preprint arXiv:2502.01061},
             year={2025}
-          }
-          
-          @article{jiang2024loopy,
-            title={Loopy: Taming Audio-Driven Portrait Avatar with Long-Term Motion Dependency},
-            author={Jiang, Jianwen and Liang, Chao and Yang, Jiaqi and Lin, Gaojie and Zhong, Tianyun and Zheng, Yanbo},
-            journal={arXiv preprint arXiv:2409.02634},
-            year={2024}
-          }
-
-          @article{lin2024cyberhost,
-            title={CyberHost: Taming Audio-driven Avatar Diffusion Model with Region Codebook Attention},
-            author={Lin, Gaojie and Jiang, Jianwen and Liang, Chao and Zhong, Tianyun and Yang, Jiaqi and Zheng, Yanbo},
-            journal={arXiv preprint arXiv:2409.01876},
-            year={2024}
           }
         </code></pre> 
 
